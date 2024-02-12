@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('parent_phone');
+            $table->foreignId('group_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

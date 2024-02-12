@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->time('time');
+            $table->foreignId('grade_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
