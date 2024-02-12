@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Grade;
 use App\Models\Group;
+use Inertia\Inertia;
+
 // use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -13,18 +15,18 @@ class GroupController extends Controller
     public function index($grade)
     {
         $groups = Group::where('grade_id', $grade)->get();
-        return view('groups.index', ['groups' => $groups]);
+        return Inertia::render('groups/index', ['groups' => $groups]);
     }
 
     public function show($grade, $group)
     {
         $group = Group::find($group)::where('grade_id', $grade)->get();
-        return view('groups.show', ['group' => $group]);
+        return Inertia::render('groups/show', ['group' => $group]);
     }
 
     public function create()
     {
-        return view('groups.create');
+        return Inertia::render('groups/create');
     }
 
     public function store(Grade $grade)
@@ -33,13 +35,13 @@ class GroupController extends Controller
 
         $grade->groups()->create($data);
 
-        return to_route('groups.index');
+        return to_route('groupsnindex');
     }
 
     public function edit($grade, $group)
     {
         $group = Group::find($group)::where('grade_id', $grade)->get();
-        return view('groups.edit', ['group' => $group]);
+        return Inertia::render('groups/edit', ['group' => $group]);
     }
 
     public function update($grade, $group)
@@ -49,7 +51,7 @@ class GroupController extends Controller
         $group = Group::find($group)::where('grade_id', $grade)->get();
         $group->update($data);
 
-        return to_route('groups.show', $group);
+        return to_route('groups/show', $group);
     }
 
     public function destroy($grade, $group)
@@ -57,6 +59,6 @@ class GroupController extends Controller
         $group = Group::find($group)::where('grade_id', $grade)->get();
         $group->delete();
 
-        return to_route('groups.index');
+        return to_route('groups/index');
     }
 }

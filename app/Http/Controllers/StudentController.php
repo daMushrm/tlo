@@ -4,26 +4,26 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Grade;
-use App\Models\Group;
 use App\Models\Student;
+use Inertia\Inertia;
 
 class StudentController extends Controller
 {
     public function index($grade, $group)
     {
         $students = Student::where('grade_id', $grade)->where('group_id', $group)->get();
-        return view('students.index', ['students' => $students]);
+        return Inertia::render('students/index', ['students' => $students]);
     }
 
     public function show($grade, $group, $student)
     {
         $student = Student::find($student)::where('grade_id', $grade)::where('group_id', $group)->get();
-        return view('students.show', ['student' => $student]);
+        return Inertia::render('students/show', ['student' => $student]);
     }
 
     public function create()
     {
-        return view('students.create');
+        return Inertia::render('students/create');
     }
 
     public function store(Grade $grade)
@@ -32,13 +32,13 @@ class StudentController extends Controller
 
         $grade->groups()->students()->create($data);
 
-        return to_route('students.index');
+        return to_route('students/index');
     }
 
     public function edit($grade, $group, $student)
     {
         $student = Student::find($student)::where('grade_id', $grade)::where('group_id', $group)->get();
-        return view('students.edit', ['student' => $student]);
+        return Inertia::render('students/edit', ['student' => $student]);
     }
 
     public function update($grade, $group, $student)
@@ -48,7 +48,7 @@ class StudentController extends Controller
         $student = Student::find($student)::where('grade_id', $grade)::where('group_id', $group)->get();
         $student->update($data);
 
-        return to_route('students.show', $student);
+        return to_route('students/show', $student);
     }
 
     public function destroy($grade, $group, $student)
@@ -56,6 +56,6 @@ class StudentController extends Controller
         $student = Student::find($student)::where('grade_id', $grade)::where('group_id', $group)->get();
         $student->delete();
 
-        return to_route('students.index');
+        return to_route('students/index');
     }
 }

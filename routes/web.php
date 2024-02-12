@@ -19,7 +19,7 @@ use Inertia\Inertia;
  */
 
 Route::get('/', function () {
-    return view('index');
+    return Inertia::render('index');
 });
 
 Route::resource('grades', GradeController::class);
@@ -28,7 +28,7 @@ Route::resource('grades.groups.students', StudentController::class);
 
 // auth stuff //
 Route::get('/dashboard', function () {
-    return Inertia::render('Home');
+    return Inertia::render('Home/dashboard');
 
 });
 // ->middleware(['auth', 'verified'])->name('dashboard');
