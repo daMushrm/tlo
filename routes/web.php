@@ -30,7 +30,7 @@ Route::resource('grades.groups.students', StudentController::class);
 // auth stuff //
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
