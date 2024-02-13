@@ -16,10 +16,10 @@ class GroupController extends Controller
         return view('groups.index', ['groups' => $groups]);
     }
 
-    public function show($grade, $group)
+    public function show(Group $group)
     {
-        $group = Group::find($group)::where('grade_id', $grade)->get();
-        return view('groups.show', ['group' => $group]);
+        $students = $group->students;
+        return view('groups.show', ['group' => $group, 'students' => $students]);
     }
 
     public function create()
