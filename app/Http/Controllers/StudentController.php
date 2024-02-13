@@ -9,15 +9,14 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index($grade, $group)
+    public function index($group)
     {
-        $students = Student::where('grade_id', $grade)->where('group_id', $group)->get();
+        $students = Student::where('group_id', $group)->get();
         return view('students.index', ['students' => $students]);
     }
 
-    public function show($grade, $group, $student)
+    public function show(Student $student)
     {
-        $student = Student::find($student)::where('grade_id', $grade)::where('group_id', $group)->get();
         return view('students.show', ['student' => $student]);
     }
 

@@ -1,1 +1,1 @@
-grade.show : {{ $grade }}
+grade.show : {{ $groups }}
