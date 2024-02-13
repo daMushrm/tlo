@@ -9,12 +9,14 @@ class GradeController extends Controller
 {
     public function index()
     {
-        return view('grades.index');
+        $grades = Grade::all();
+        return view('grades.index', ['grades' => $grades]);
     }
 
     public function show(Grade $grade)
     {
-        return view('grades.show', ['grade' => $grade]);
+        $groups = $grade->groups;
+        return view('grades.show', ['groups' => $groups]);
     }
 
     public function create()

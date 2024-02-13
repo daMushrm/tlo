@@ -1,1 +1,1 @@
-groups.show: {{ $group }}
+groups.show: {{ $students }}
