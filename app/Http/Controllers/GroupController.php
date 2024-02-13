@@ -19,7 +19,7 @@ class GroupController extends Controller
     public function show(Group $group)
     {
         $students = $group->students;
-        return view('groups.show', ['students' => $students]);
+        return view('groups.show', ['group' => $group, 'students' => $students]);
     }
 
     public function create()
