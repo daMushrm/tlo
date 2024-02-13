@@ -6,8 +6,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Grade;
 use App\Models\Group;
-use Inertia\Inertia;
-
 // use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -15,18 +13,18 @@ class GroupController extends Controller
     public function index($grade)
     {
         $groups = Group::where('grade_id', $grade)->get();
-        return Inertia::render('groups/index', ['groups' => $groups]);
+        return view('groups.index', ['groups' => $groups]);
     }
 
     public function show($grade, $group)
     {
         $group = Group::find($group)::where('grade_id', $grade)->get();
-        return Inertia::render('groups/show', ['group' => $group]);
+        return view('groups.show', ['group' => $group]);
     }
 
     public function create()
     {
-        return Inertia::render('groups/create');
+        return view('groups.create');
     }
 
     public function store(Grade $grade)
@@ -41,7 +39,7 @@ class GroupController extends Controller
     public function edit($grade, $group)
     {
         $group = Group::find($group)::where('grade_id', $grade)->get();
-        return Inertia::render('groups/edit', ['group' => $group]);
+        return view('groups.edit', ['group' => $group]);
     }
 
     public function update($grade, $group)

@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Grade;
-use Inertia\Inertia;
 
 class GradeController extends Controller
 {
     public function index()
     {
-        return Inertia::render('grades/index');
+        return view('grades.index');
     }
 
     public function show(Grade $grade)
     {
-        return Inertia::render('grades/show', ['grade' => $grade]);
+        return view('grades.show', ['grade' => $grade]);
     }
 
     public function create()
     {
-        return Inertia::render('grades/create');
+        return view('grades.create');
     }
 
     public function store()
@@ -34,7 +33,7 @@ class GradeController extends Controller
 
     public function edit(Grade $grade)
     {
-        return Inertia::render('grades/edit', ['grade' => $grade]);
+        return view('grades.edit', ['grade' => $grade]);
     }
 
     public function update(Grade $grade)

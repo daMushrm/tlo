@@ -12,6 +12,6 @@ class GuestLayout extends Component
      */
     public function render(): View
     {
-        return Inertia::render('layouts.guest');
+        return view('layouts.guest');
     }
 }
