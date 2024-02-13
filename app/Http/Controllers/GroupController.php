@@ -35,7 +35,7 @@ class GroupController extends Controller
 
         $grade->groups()->create($data);
 
-        return to_route('groupsnindex');
+        return to_route('groups.index');
     }
 
     public function edit($grade, $group)
@@ -51,7 +51,7 @@ class GroupController extends Controller
         $group = Group::find($group)::where('grade_id', $grade)->get();
         $group->update($data);
 
-        return to_route('groups/show', $group);
+        return to_route('groups.show', $group);
     }
 
     public function destroy($grade, $group)
@@ -59,6 +59,6 @@ class GroupController extends Controller
         $group = Group::find($group)::where('grade_id', $grade)->get();
         $group->delete();
 
-        return to_route('groups/index');
+        return to_route('groups.index');
     }
 }

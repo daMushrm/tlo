@@ -29,7 +29,7 @@ class GradeController extends Controller
 
         Grade::create($data);
 
-        return to_route('grades/index');
+        return to_route('grades.index');
     }
 
     public function edit(Grade $grade)
@@ -43,13 +43,13 @@ class GradeController extends Controller
 
         $grade->update($data);
 
-        return to_route('grades/show', $grade);
+        return to_route('grades.show', $grade);
     }
 
     public function destroy(Grade $grade)
     {
         $grade->delete();
 
-        return to_route('grades/index');
+        return to_route('grades.index');
     }
 }

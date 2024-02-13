@@ -1,1 +1,0 @@
-grade.show : {{ $grade }}

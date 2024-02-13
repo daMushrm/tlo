@@ -32,7 +32,7 @@ class StudentController extends Controller
 
         $grade->groups()->students()->create($data);
 
-        return to_route('students/index');
+        return to_route('students.index');
     }
 
     public function edit($grade, $group, $student)
@@ -48,7 +48,7 @@ class StudentController extends Controller
         $student = Student::find($student)::where('grade_id', $grade)::where('group_id', $group)->get();
         $student->update($data);
 
-        return to_route('students/show', $student);
+        return to_route('students.show', $student);
     }
 
     public function destroy($grade, $group, $student)

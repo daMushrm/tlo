@@ -1,1 +1,0 @@
-grades.edit : {{ $grade }}
