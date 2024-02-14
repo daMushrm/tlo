@@ -16,11 +16,17 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-gray-900 antialiased min-h-screen flex flex-col">
+<body class="font-sans text-gray-900 antialiased flex flex-col min-h-screen">
     <x-non-auth-navigation />
 
+    <div class="flex-grow flex justify-center items-center px-5">
 
-    {{ $slot }}
+        <div class="rounded-lg border bg-card text-card-foreground  w-full max-w-xl mx-auto p-4 shadow-lg"
+            data-v0-t="card">
+            {{ $slot }}
+        </div>
+    </div>
+
 </body>
 
 </html>
