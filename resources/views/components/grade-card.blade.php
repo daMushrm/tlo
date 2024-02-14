@@ -1,7 +1,7 @@
 @props(['grade'])
 
 <div class="relative hover:translate-x-2 hover:translate-y-2 duration-300">
-    <a href="{{ route('groups.index', ['grade' => $grade]) }}">
+    <a href="{{ route('grades.show', ['grade' => $grade]) }}">
         <div class="rounded-lg   z-10 relative border text-card-foreground  bg-white w-full max-w-md  shadow-xl">
             <div class="flex space-y-1.5 p-6 flex-col">
                 @if (isset($head))

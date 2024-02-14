@@ -6,17 +6,19 @@
         </h2>
         <x-cards-container>
             @foreach ($grades as $grade)
-                <x-g-card class="text-white shadow-2xl" :grade="$grade">
+                <x-grade-card class="text-white shadow-2xl" :grade="$grade">
                     <x-slot name="head"> {{ $grade->name }}</x-slot>
                     Hi there
-                </x-g-card>
+                </x-grade-card>
             @endforeach
 
         </x-cards-container>
     </section>
-    <a class="fixed bottom-5 right-5 p-5 bg-green-400 rounded-lg" href="{{ route('grades.create') }}">
+    <a class="fixed bottom-5 right-5 p-5 bg-green-400 rounded-lg z-20 " href="{{ route('grades.create') }}">
+
 
         + Add New Grade
+
     </a>
 
 </x-app-layout>
