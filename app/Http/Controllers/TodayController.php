@@ -7,7 +7,7 @@ use App\Models\Grade;
 use DateTime;
 
 
-class CalenderController extends Controller
+class TodayController extends Controller
 {
     public function index()
     {
@@ -36,6 +36,6 @@ class CalenderController extends Controller
             return $a->time > $b->time;
         });
 
-        return view('calendar', ['target_groups' => $target_groups]);
+        return view('today', ['target_groups' => $target_groups]);
     }
 }
