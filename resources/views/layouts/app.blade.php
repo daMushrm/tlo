@@ -17,7 +17,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-gray-100 flex flex-col">
         <x-navigation />
 
         <!-- Page Heading -->
@@ -30,7 +30,7 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="flex flex-grow">
             {{ $slot }}
         </main>
     </div>

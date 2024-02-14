@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->middleware('guest')->name('index');
 
-Route::resource('grades', GradeController::class);
-Route::resource('grades.groups', GroupController::class);
+Route::resource('grades', GradeController::class)->name('store', 'grades.store');
+Route::resource('grades.groups', GroupController::class)->name('store', 'groups.store');
 Route::resource('grades.groups.students', StudentController::class);
 
 Route::get('/email/verify', function () {
