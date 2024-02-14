@@ -23,9 +23,6 @@
     </x-slot>
 
     <div class="flex flex-col gap-10 p-10 w-full">
-
-
-
         <section class="bg-white w-full min-h-20 p-5 shadow rounded-md flex flex-col gap-4 ">
             <h2 class="font-semibold text-3xl text-gray-800 leading-tight">
                 Grades
@@ -36,7 +33,6 @@
                         Hi there
                     </x-g-card>
                 @endfor
-
 
             </x-cards-container>
         </section>
