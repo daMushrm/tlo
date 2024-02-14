@@ -9,7 +9,7 @@
 
 
 
-        <section class="bg-white w-full min-h-20 p-5 shadow rounded-md flex flex-col gap-4 ">
+        {{-- <section class="bg-white w-full min-h-20 p-5 shadow rounded-md flex flex-col gap-4 ">
             <h2 class="font-semibold text-3xl text-gray-800 leading-tight">
                 Grades
             </h2>
@@ -22,7 +22,7 @@
                 @endfor
 
             </x-cards-container>
-        </section>
+        </section> --}}
         <section class="bg-white w-full h-20 p-5 shadow rounded-md flex gap-4">
             <h2 class="font-semibold text-3xl text-gray-800 leading-tight">
                 Groups
@@ -36,14 +36,5 @@
 
         </section>
     </div>
-    {{-- <section></section>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
-    </div> --}}
+
 </x-app-layout>

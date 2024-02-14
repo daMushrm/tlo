@@ -20,6 +20,9 @@
                     <x-nav-link :href="route('calendar')" :active="request()->routeIs('calendar')">
                         Calender
                     </x-nav-link>
+                    <x-nav-link :href="route('grades.index')" :active="request()->routeIs('grades.index')">
+                        Grades
+                    </x-nav-link>
                 </div>
             </div>
 

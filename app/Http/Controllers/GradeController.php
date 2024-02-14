@@ -16,7 +16,7 @@ class GradeController extends Controller
     public function show(Grade $grade)
     {
         $groups = $grade->groups;
-        return view('grades.show', ['grade' => $grade,'groups' => $groups]);
+        return view('grades.show', ['grade' => $grade, 'groups' => $groups]);
     }
 
     public function create()
@@ -44,7 +44,7 @@ class GradeController extends Controller
 
         $grade->update($data);
 
-        return to_route('grades.show', $grade);
+        return to_route('grades.index');
     }
 
     public function destroy(Grade $grade)
