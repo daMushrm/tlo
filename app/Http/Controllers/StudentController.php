@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Grade;
-use App\Models\Group;
 use App\Models\Student;
 
 class StudentController extends Controller
@@ -20,9 +19,9 @@ class StudentController extends Controller
         return view('students.show', ['student' => $student]);
     }
 
-    public function create()
+    public function create(Grade $grade, $group)
     {
-        return view('students.create');
+        return view('students.create', ['grade' => $grade, 'group' => $group]);
     }
 
     public function store(Grade $grade)

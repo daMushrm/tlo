@@ -20,10 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->middleware('guest')->name('index');
 
-Route::resource('grades', GradeController::class)->name('store', 'grades.store');
-Route::resource('grades.groups', GroupController::class)->name('store', 'groups.store');
-Route::resource('grades.groups.students', StudentController::class);
-
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -35,9 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('grades', GradeController::class);
-    Route::resource('grades.groups', GroupController::class);
-    Route::resource('grades.groups.students', StudentController::class);
+    Route::resource('grades', GradeController::class)->names(['store' => 'grades.store', 'index' => 'grades.index']);;
+    Route::resource('grades.groups', GroupController::class)->names(['store' => 'groups.store', 'index' => 'groups.index']);;
+    Route::resource('grades.groups.students', StudentController::class)->names(['store' => 'students.store', 'index' => 'students.index']);;
+
 });
 
 require __DIR__ . '/auth.php';

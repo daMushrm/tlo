@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Grade;
 use App\Models\Group;
+
 // use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -22,9 +23,9 @@ class GroupController extends Controller
         return view('groups.show', ['group' => $group, 'students' => $students]);
     }
 
-    public function create()
+    public function create(Grade $grade)
     {
-        return view('groups.create');
+        return view('groups.create', ['grade' => $grade]);
     }
 
     public function store(Grade $grade)
@@ -33,7 +34,7 @@ class GroupController extends Controller
 
         $grade->groups()->create($data);
 
-        return to_route('groups.index');
+        return to_route('groups.index', ['grade' => $grade]);
     }
 
     public function edit($grade, $group)
