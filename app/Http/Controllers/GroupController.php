@@ -50,7 +50,7 @@ class GroupController extends Controller
         $group = Group::find($group);
         $group->update($data);
 
-        return to_route('groups.show', [$grade, $group]);
+        return to_route('groups.index', [$grade, $group]);
     }
 
     public function destroy($grade, $group)
