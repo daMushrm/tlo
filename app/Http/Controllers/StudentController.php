@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Grade;
+use App\Models\Group;
 use App\Models\Student;
 
 class StudentController extends Controller
@@ -24,13 +25,14 @@ class StudentController extends Controller
         return view('students.create', ['grade' => $grade, 'group' => $group]);
     }
 
-    public function store(Grade $grade)
+    public function store($grade, $group)
     {
         $data = request()->all();
+        $data['group_id'] = $group;
 
-        $grade->groups()->students()->create($data);
+        Student::create($data);
 
-        return to_route('students.index');
+        return to_route('students.index', ['group' => $group, 'grade' => $grade]);
     }
 
     public function edit($grade, $group, $student)

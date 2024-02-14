@@ -31,6 +31,11 @@ class CalenderController extends Controller
             }
         }
 
+        // order the groups by time
+        usort($target_groups, function($a, $b) {
+            return $a->time > $b->time;
+        });
+
         return view('calendar', ['target_groups' => $target_groups]);
     }
 }

@@ -21,7 +21,6 @@
                     </x-g-card>
                 @endfor
 
-
             </x-cards-container>
         </section>
         <section class="bg-white w-full h-20 p-5 shadow rounded-md flex gap-4">

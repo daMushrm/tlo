@@ -31,9 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('grades', GradeController::class)->names(['store' => 'grades.store', 'index' => 'grades.index']);;
-    Route::resource('grades.groups', GroupController::class)->names(['store' => 'groups.store', 'index' => 'groups.index']);;
-    Route::resource('grades.groups.students', StudentController::class)->names(['store' => 'students.store', 'index' => 'students.index']);;
+    Route::resource('grades', GradeController::class)->names('grades');
+    Route::resource('grades.groups', GroupController::class)->names('groups');
+    Route::resource('grades.groups.students', StudentController::class)->names('students');
 
 });
 

@@ -27,7 +27,7 @@ class GradeController extends Controller
     public function store()
     {
         $data = request()->all();
-
+        $data['user_id'] = auth()->id();
         Grade::create($data);
 
         return to_route('grades.index');
