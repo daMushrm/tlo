@@ -1,8 +1,3 @@
-@props(['color'])
-{{-- <div {{ $attributes->merge(['class' => 'min-h-[20vh] rounded-xl p-4 ']) }} style="background:{{ $color }};">
-    {{ $slot }}
-</div> --}}
-
 <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-md" data-v0-t="card">
     <div class="flex space-y-1.5 p-6 flex-col">
         @if (isset($head))
@@ -16,6 +11,9 @@
 
         <p class="text-muted-foreground text-sm">
             {{ $slot }}
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium distinctio consequuntur incidunt earum
+            nostrum excepturi quibusdam! Unde ea quas nam cupiditate nostrum aliquam ullam omnis quo, aut error placeat
+            vel?
         </p>
     </div>
     <div class="p-4">

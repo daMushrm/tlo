@@ -1,20 +1,3 @@
-@php
-    $colors = [
-        'red' => '#ff0000',
-        'green' => '#008000',
-        'blue' => '#0000ff',
-        'black' => '#000000',
-        'grey' => '#808080',
-        'yellow' => '#ffff00',
-        'purple' => '#800080',
-        'orange' => '#ffa500',
-    ];
-    $indexedColors = array_values($colors); // Convert to numerical array
-
-@endphp
-
-
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -22,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="flex flex-col gap-10 p-10 w-full">
+    <div class="flex flex-col gap-10  w-full">
 
 
 
@@ -31,9 +14,9 @@
                 Grades
             </h2>
             <x-cards-container>
-                @for ($i = 0; $i < 40; $i++)
-                    <x-g-card color="{{ $indexedColors[mt_rand(0, 7)] }}" class="text-white shadow-2xl">
-                        <x-slot name="head"> This is AWSOME!</x-slot>
+                @for ($i = 0; $i < 10; $i++)
+                    <x-g-card class="text-white shadow-2xl">
+                        <x-slot name="head"> This is AWESOME!</x-slot>
                         Hi there
                     </x-g-card>
                 @endfor
