@@ -33,6 +33,7 @@
             <x-cards-container>
                 @for ($i = 0; $i < 40; $i++)
                     <x-g-card color="{{ $indexedColors[mt_rand(0, 7)] }}" class="text-white shadow-2xl">
+                        <x-slot name="head"> This is AWSOME!</x-slot>
                         Hi there
                     </x-g-card>
                 @endfor
