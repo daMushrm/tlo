@@ -25,7 +25,7 @@
                 </a>
             </div> --}}
 
-    <div class="flex-grow flex justify-center items-center">
+    <div class="flex-grow flex justify-center items-center px-5">
 
         <div class="rounded-lg border bg-card text-card-foreground  w-full max-w-xl mx-auto p-4 shadow-lg"
             data-v0-t="card">

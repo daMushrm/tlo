@@ -1,4 +1,4 @@
-<nav class="bg-white mb-4  p-3 border-b border-gray-400">
+<nav class="bg-white   p-3 border-b border-gray-400 ">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
@@ -16,14 +16,13 @@
 
                 <a href={{ route('login') }}>
                     <x-primary-button>
-                        Login
+                        Log in
                     </x-primary-button>
                 </a>
                 <a href={{ route('register') }}>
                     <x-secondary-button>
                         Sign Up
                     </x-secondary-button>
-
                 </a>
             </div>
 
@@ -31,7 +30,6 @@
             <div class="sm:hidden">
 
                 <x-dropdown align="right" width="48">
-
                     <x-slot name="trigger">
 
                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -43,7 +41,6 @@
                                 d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </x-slot>
-
                     <x-slot name="content">
                         <x-dropdown-link :href="route('login')">
                             Login

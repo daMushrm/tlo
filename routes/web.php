@@ -17,24 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::view('/', 'index')->middleware('guest')->name('index');
 
 Route::resource('grades', GradeController::class);
 Route::resource('grades.groups', GroupController::class);
 Route::resource('grades.groups.students', StudentController::class);
-
-// auth stuff //
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
 Route::middleware('auth')->group(function () {
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
