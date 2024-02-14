@@ -19,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->middleware('guest')->name('index');
 
-Route::resource('grades', GradeController::class);
-Route::resource('grades.groups', GroupController::class);
-Route::resource('grades.groups.students', StudentController::class);
-
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -33,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('grades', GradeController::class);
+    Route::resource('grades.groups', GroupController::class);
+    Route::resource('grades.groups.students', StudentController::class);
 });
 
 require __DIR__ . '/auth.php';
