@@ -1,4 +1,9 @@
 <x-guest-layout>
+
+
+
+    <h1 class="text-4xl font-bold mb-2">Sign up</h1>
+    <p class="text-xl mb-8">Come for what you love, Stay for what you discover! </p>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -38,15 +43,15 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                href="{{ route('login') }}">
-                Already registered?
-            </a>
+        <div class="flex flex-col items-center justify-start my-4">
 
-            <x-primary-button class="ms-4">
+            <x-primary-button class=" w-full m-4">
                 Register
             </x-primary-button>
         </div>
+        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            href="{{ route('login') }}">
+            Already registered?
+        </a>
     </form>
 </x-guest-layout>

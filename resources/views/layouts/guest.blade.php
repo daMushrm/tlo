@@ -18,15 +18,16 @@
 
 <body class="font-sans text-gray-900 antialiased flex flex-col min-h-screen">
     <x-non-auth-navigation />
-
-    <div class="flex-grow flex justify-center items-center px-5">
-
-        <div class="rounded-lg border bg-card text-card-foreground  w-full max-w-xl mx-auto p-4 shadow-lg"
-            data-v0-t="card">
-            {{ $slot }}
+    <div class="flex flex-grow">
+        <div style="background-image: url(/textured-background-4.png)"
+            class="w-1/2 max-md:hidden bg-black bg-cover bg-no-repeat"></div>
+        <div class="w-1/2  max-md:w-full flex flex-col justify-center px-16 md:items-center min-w-[350px]">
+            <div class="md:min-w-[50%]">
+                {{ $slot }}
+            </div>
         </div>
-    </div>
 
+    </div>
 </body>
 
 </html>
