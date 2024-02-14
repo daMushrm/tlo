@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('today')" :active="request()->routeIs('today')">
-                        Today
+                        Today 📎
                     </x-nav-link>
                     <x-nav-link :href="route('grades.index')" :active="request()->routeIs('grades.index')">
                         Grades
@@ -77,7 +77,7 @@
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('today')" :active="request()->routeIs('today')">
-                Today
+                Today 📎
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('grades.index')" :active="request()->routeIs('grades.index')">
                 Grades
