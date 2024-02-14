@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
@@ -28,11 +29,15 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 
 Route::middleware('auth')->group(function () {
-    Route::view('/calendar', 'calendar')->name('calendar');
+    Route::get('/calendar', [CalenderController::class, 'index'])->name('calendar');
     Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('grades', GradeController::class);
+    Route::resource('grades.groups', GroupController::class);
+    Route::resource('grades.groups.students', StudentController::class);
 });
 
 require __DIR__ . '/auth.php';
