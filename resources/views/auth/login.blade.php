@@ -9,10 +9,10 @@
         @csrf
 
         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="name@email.com"
-            required />
+            required autocomplete="username" />
         <x-input-error :messages="$errors->get('email')" class="mt-2" />
         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-            placeholder="password" />
+            placeholder="password" autocomplete="current-password" />
         <div class="flex items-center justify-between ">
             <div class="flex items-center space-x-2">
                 <label for="remember_me" class="inline-flex items-center">
