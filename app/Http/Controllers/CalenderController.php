@@ -4,23 +4,27 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Grade;
-// use App\Models\Group;
+use DateTime;
+
 
 class CalenderController extends Controller
 {
     public function index()
     {
-        $target_day = 'Sunday';
+        $current_DateTime = new DateTime();
+        // Adding 2 hours to the time so it will be in Egypt's timezone
+        $current_DateTime->modify('+2 hours');
+        $today = $current_DateTime->format('l');
+        
         $target_groups = [];
         $user_id = auth()->user()->id;
         $grades = Grade::where('user_id', $user_id)->get();
-        // @dd(Group::all());
-
+        
         if (!$grades->isEmpty()) {
             foreach ($grades as $grade) {
                 $groups = $grade->groups;
                 foreach ($groups as $group) {
-                    if ($group->day == $target_day) {
+                    if ($group->day == $today) {
                         $target_groups[] = $group;
                     }
                 }
