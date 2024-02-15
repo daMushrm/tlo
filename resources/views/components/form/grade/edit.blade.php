@@ -11,5 +11,16 @@
                 <p>Save</p>
             </x-primary-button>
         </form>
+        <div x-data="{ open: false }">
+
+            <x-primary-button @click="open=!open" class="bg-red-500 w-full rounded-md text-white hover:bg-red-400">
+                <p>Delete </p>
+            </x-primary-button>
+            <div x-show="open"
+                class=" fixed top-0  left-0 z-30 bg-black bg-opacity-45 duration-300 flex justify-end items-end p-10 w-screen h-screen">
+                <x-form.grade.delete class="z-20 max-w-lg" :grade="$grade" />
+                <div class="z-10 absolute w-full h-full " @click="open=!open"></div>
+            </div>
+        </div>
     </div>
 </div>

@@ -55,9 +55,9 @@ class GroupController extends Controller
 
     public function destroy($grade, $group)
     {
-        $group = Group::find($group)::where('grade_id', $grade)->get();
+        $group = Group::find($group);
         $group->delete();
 
-        return to_route('groups.index');
+        return to_route('grade.show', $grade);
     }
 }
