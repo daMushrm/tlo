@@ -5,17 +5,17 @@
             <h2 class="font-semibold text-3xl mx-4 text-gray-800 leading-tight">
                 Grades
             </h2>
-            <div class="" x-data="{ open: false }">
 
-                <x-primary-button @click="open=!open"> Add +
+            <x-my-modal>
 
-                </x-primary-button>
-                <div x-show="open"
-                    class=" fixed top-0  left-0 z-30 bg-black bg-opacity-45 duration-300 flex justify-center items-center w-screen h-screen">
-                    <x-form.grade.create />
-                    <div class="z-10 absolute w-full h-full " @click="open=!open"></div>
-                </div>
-            </div>
+                <x-slot name="treger">
+                    <x-primary-button>
+                        Add +
+                    </x-primary-button>
+                </x-slot>
+
+                <x-form.grade.create />
+            </x-my-modal>
         </div>
 
         @foreach ($grades as $grade)

@@ -4,7 +4,18 @@
         <div class="flex">
             <h2 class="font-semibold text-3xl mx-4 text-gray-800 leading-tight">
                 Groups of
-                <div class="inline-block " x-data="{ open: false }">
+
+                <x-my-modal>
+
+                    <x-slot name="treger">
+                        <button class="underline">
+                            {{ $grade->name }}
+                        </button>
+                    </x-slot>
+
+                    <x-form.grade.edit class="z-20" :grade="$grade" />
+                </x-my-modal>
+                {{-- <div class="inline-block " x-data="{ open: false }">
 
                     <button class="underline" @click="open=!open">
                         {{ $grade->name }}
@@ -14,7 +25,7 @@
                         <x-form.grade.edit class="z-20" :grade="$grade" />
                         <div class="z-10 absolute w-full h-full " @click="open=!open"></div>
                     </div>
-                </div>
+                </div> --}}
 
             </h2>
         </div>
@@ -39,8 +50,8 @@
                         {{-- edit group modal --}}
                         <div x-show="open"
                             class=" absolute top-0  left-0 z-20 bg-black bg-opacity-45 duration-300 flex justify-center items-center w-screen h-screen">
-                            <x-form.group.edit class="z-20" :group="$group" />
-                            <div class="z-10 fixed w-full h-full " @click="open=!open"></div>
+                            <x-form.group.edit :group="$group" />
+                            <div class="z-20 fixed w-full h-full " @click="open=!open"></div>
                         </div>
                     </div>
                 @endforeach
