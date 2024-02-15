@@ -5,11 +5,11 @@
         <div class="rounded-lg   z-10 relative border text-card-foreground  bg-white w-full  shadow-xl">
             <div class="flex space-y-1.5 p-6 flex-col">
                 @if (isset($head))
-                    <div class="flex items-start gap-4">
-                        <h3 class="font-semibold  tracking-tight text-lg">
-                            {{ $head }}
-                        </h3>
-                    </div>
+                <div class="flex items-start gap-4">
+                    <h3 class="font-semibold  tracking-tight text-lg">
+                        {{ $head }}
+                    </h3>
+                </div>
                 @endif
 
                 <p class="text-muted-foreground text-sm">

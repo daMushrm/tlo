@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <section class="bg-white w-full min-h-20 p-10 shadow rounded-md flex flex-col gap-4 ">
+    <section class="bg-white w-full min-h-20 p-10 shadow rounded-md flex flex-col gap-4">
         <div class="flex items-center">
             <h2 class="font-semibold text-3xl mx-4 text-gray-800 leading-tight">
                 Grades
