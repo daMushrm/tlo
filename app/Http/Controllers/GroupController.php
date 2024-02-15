@@ -9,11 +9,6 @@ use App\Models\Group;
 
 class GroupController extends Controller
 {
-    public function index($grade)
-    {
-        $groups = Group::where('grade_id', $grade)->get();
-        return view('groups.index', ['groups' => $groups]);
-    }
 
     public function show(Grade $grade, Group $group)
     {

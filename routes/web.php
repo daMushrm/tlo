@@ -31,8 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('grades', GradeController::class)->names('grades');
-    Route::resource('grades.groups', GroupController::class)->names('groups');
-    Route::resource('grades.groups.students', StudentController::class)->names('students');
+    Route::resource('grades.groups', GroupController::class, ['exept' => ['index']])->names('groups');
+    Route::resource('grades.groups.students', StudentController::class, ['exept' => ['index']])->names('students');
 
 });
 
