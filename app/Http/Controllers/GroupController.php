@@ -11,8 +11,7 @@ class GroupController extends Controller
 {
     public function index($grade)
     {
-        $groups = Group::where('grade_id', $grade)->get();
-        return view('groups.index', ['groups' => $groups]);
+        return to_route('grades.show', ['grade' => $grade]);
     }
 
     public function show(Grade $grade, Group $group)
