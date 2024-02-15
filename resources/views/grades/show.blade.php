@@ -49,9 +49,9 @@
                         </div>
                         {{-- edit group modal --}}
                         <div x-show="open"
-                            class=" absolute top-0  left-0 z-20 bg-black bg-opacity-45 duration-300 flex justify-center items-center w-screen h-screen">
-                            <x-form.group.edit :group="$group" />
-                            <div class="z-20 fixed w-full h-full " @click="open=!open"></div>
+                            class=" fixed top-0  left-0 z-20 bg-black bg-opacity-45 duration-300 flex justify-center items-center w-screen h-screen">
+                            <div class="z-20 fixed top-0 left-0 w-full h-full " @click="open=!open"></div>
+                            <x-form.group.edit class="z-20" :group="$group" />
                         </div>
                     </div>
                 @endforeach
