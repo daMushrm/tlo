@@ -6,10 +6,10 @@
         </h2>
         <x-cards-container>
             @foreach ($groups as $group)
-            <x-group-card class="text-white shadow-2xl" :group="$group">
-                <x-slot name="head"> {{ $group->name }}</x-slot>
-                Hi there
-            </x-group-card>
+                <x-group-card class="text-white shadow-2xl" :group="$group">
+                    <x-slot name="head"> {{ $group->name }}</x-slot>
+                    Hi there
+                </x-group-card>
             @endforeach
 
         </x-cards-container>
