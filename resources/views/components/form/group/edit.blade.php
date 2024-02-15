@@ -3,7 +3,7 @@
     $options = [['value' => 'Monday', 'label' => 'Monday'], ['value' => 'Tuesday', 'label' => 'Tuesday'], ['value' => 'Wednesday', 'label' => 'Wednesday'], ['value' => 'Thursday', 'label' => 'Thursday'], ['value' => 'Friday', 'label' => 'Friday'], ['value' => 'Saturday', 'label' => 'Saturday'], ['value' => 'Sunday', 'label' => 'Sunday']];
 
 @endphp
-<div class="flex-grow flex flex-col justify-center items-center">
+<div {{ $attributes }} class="flex-grow flex flex-col justify-center items-center">
 
     <div class="bg-white p-10 rounded-md shadow-lg">
         <h1 class="text-4xl font-bold mb-2">Edit Group</h1>

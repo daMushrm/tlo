@@ -4,7 +4,7 @@
 
 @endphp
 
-<div class="flex-grow flex flex-col justify-center items-center">
+<div {{ $attributes }} class="flex-grow flex flex-col justify-center items-center">
 
     <div class="bg-white p-10 rounded-md shadow-lg">
         <h1 class="text-4xl font-bold mb-2">Create Group</h1>

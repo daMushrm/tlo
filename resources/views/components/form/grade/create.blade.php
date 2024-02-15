@@ -1,4 +1,4 @@
-<div class="flex-grow flex flex-col justify-center items-center ">
+<div {{ $attributes }} class="flex-grow flex flex-col justify-center items-center ">
     <div class="bg-white p-10 rounded-md shadow-lg z-20">
         <h1 class="text-4xl font-bold mb-2">Create Grade</h1>
         <form method="POST" class="space-y-6" action="{{ route('grades.store') }}">
