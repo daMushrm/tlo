@@ -1,6 +1,6 @@
 @props(['grade'])
 
-<div>
+<div class="hover:-translate-y-1 duration-200">
     <a href="{{ route('grades.show', ['grade' => $grade]) }}" class="w-full">
         <div
             class="rounded-lg z-10 relative border text-card-foreground bg-white shadow-xl flex justify-between items-center w-full">
