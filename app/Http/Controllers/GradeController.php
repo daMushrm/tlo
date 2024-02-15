@@ -44,7 +44,7 @@ class GradeController extends Controller
 
         $grade->update($data);
 
-        return to_route('grades.index');
+        return to_route('grades.show', ['grade' => $grade->id]);
     }
 
     public function destroy(Grade $grade)
