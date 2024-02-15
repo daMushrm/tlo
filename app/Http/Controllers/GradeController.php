@@ -19,11 +19,6 @@ class GradeController extends Controller
         return view('grades.show', ['grade' => $grade, 'groups' => $groups]);
     }
 
-    public function create()
-    {
-        return view('grades.create');
-    }
-
     public function store()
     {
         $data = request()->all();
