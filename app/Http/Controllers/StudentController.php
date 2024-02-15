@@ -9,10 +9,9 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index($group)
+    public function index($grade, $group)
     {
-        $students = Student::where('group_id', $group)->get();
-        return view('students.index', ['students' => $students]);
+        return to_route('groups.show', ['grade' => $grade, 'group' => $group]);
     }
 
     public function show(Student $student)
