@@ -9,10 +9,6 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index($grade, $group)
-    {
-        return to_route('groups.show', ['grade' => $grade, 'group' => $group]);
-    }
 
     public function show(Student $student)
     {

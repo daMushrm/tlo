@@ -9,10 +9,6 @@ use App\Models\Group;
 
 class GroupController extends Controller
 {
-    public function index($grade)
-    {
-        return to_route('grades.show', ['grade' => $grade]);
-    }
 
     public function show(Grade $grade, Group $group)
     {
