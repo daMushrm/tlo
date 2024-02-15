@@ -9,7 +9,7 @@
         @csrf
 
         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="name@email.com"
-            required autocomplete="username" />
+            required autocomplete="name" />
         <x-input-error :messages="$errors->get('email')" class="mt-2" />
         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
             placeholder="password" autocomplete="current-password" />
